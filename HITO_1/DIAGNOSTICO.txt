@@ -12,3 +12,8 @@ Que es DDL:
 
 Es la definicion de datos que son describidoslos datos y que son relacionadas 
 en una base de datos, que este DDL llegan hacer en scrip.
+
+git status                   (para ver todos los cambios)
+gid add .                    (para añadir todos los cambios)	
+git commit -m "mensaje"      (para añadir un comentario)
+git push origin main         (para sincronisar)
