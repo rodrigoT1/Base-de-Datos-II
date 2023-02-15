@@ -1,0 +1,14 @@
+Que es una base de datos relacional:
+
+Es la recoleccion de datos e informacionque son como relacionadas
+estos datos son relaconadas en tablas o tambien en columnas.
+
+Que es DML:
+
+Es mas conocidos como la manipulacion de de datos de un tipo de lenguajeque son proporcionadis 
+del mismo sistemaque son como un gestor de una base de satos
+
+Que es DDL:
+
+Es la definicion de datos que son describidoslos datos y que son relacionadas 
+en una base de datos, que este DDL llegan hacer en scrip.
