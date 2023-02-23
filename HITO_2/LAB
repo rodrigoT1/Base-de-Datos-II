@@ -1,0 +1,55 @@
+laboratorio_1
+
+CREATE DATABASE hito_II;
+
+CREATE DATABASE ejemplo;
+
+drop database ejemplo;
+
+create database caso1;
+use caso1;
+create table nombre
+(
+    id_nombre int primary key not null,
+    nombre varchar(100)not null,
+    apellidos varchar(100) not null
+);
+insert into nombre(id_nombre, nombre, apellidos)
+values (1,'william','barra');
+
+insert into nombre(id_nombre, nombre, apellidos)
+values (2,'rodrigo','torrez');
+
+select * from nombre
+drop database if exists caso1;
+
+CREATE DATABASE UNIVERSIDAD;
+
+USE UNIVERSIDAD
+DROP TABLE ESTUDIANTES
+DROP DATABASE UNIVERSIDAD
+CREATE TABLE ESTUDIANTES
+(
+    ID_est integer auto_increment primary key not null,
+    nombres varchar(100) not null,
+    apellidos varchar(100) not null,
+    edad integer not null,
+    fono integer not null,
+    email varchar(50)not null
+);
+
+describe ESTUDIANTES;
+
+insert into ESTUDIANTES (nombres, apellidos, edad, fono, email) values
+
+('NOMBRE1','APELLIDOS1','10','11111','USER1@GMAIL.COM'),
+('NOMBRE2','APELLIDOS2','20','11111','USER2@GMAIL.COM'),
+('NOMBRE3','APELLIDOS3','10','11111','USER3@GMAIL.COM');
+
+select *from ESTUDIANTES
+DROP TABLE ESTUDIANTES
+
+SELECT LAST_INSERT_ID();
+
+ALTER TABLE ESTUDIANTES
+    ADD COLUMN DIRECCION VARCHAR (200) DEFAULT 'EL ALTO';
