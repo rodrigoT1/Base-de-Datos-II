@@ -38,7 +38,7 @@ create table area
     area varchar (20)
 )
 select * from area
--------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
 ESTUDIANTES
 CREATE DATABASE hito_II;
 
@@ -151,6 +151,8 @@ create table inscripcion
     foreign key (id_mat) references materias(id_mat)
 )
 select *from inscripcion
+-------------------------------------------------------------------------
+LIBRERIA 
 
 create database practica
 use practica
@@ -181,5 +183,4 @@ create table book
 )
 select *from book
 --------------------------------------------------------------------------------------
-LIBRERIA
-SUBIR LO AQUI
+
