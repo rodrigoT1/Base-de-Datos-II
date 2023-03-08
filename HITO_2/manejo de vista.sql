@@ -1,0 +1,57 @@
+create database Hito_2;
+use Hito_2;
+DROP DATABASE Hito_2
+create table usuarios
+(
+    ud_usuario integer auto_increment primary key ,
+    nombres varchar(50) not null,
+    apellidos varchar(50)not null,
+    edad integer not null,
+    email varchar(100)not null
+)
+insert into usuarios(nombres, apellidos, edad, email)
+VALUES('nombres1','apellidos1','20','nombres1@gmail.com'),
+      ('nombres2','apellidos2','30','nombres2@gmail.com'),
+      ('nombres3','apellidos3','40','nombres3@gmail.com');
+select* from usuarios
+
+#####################Mostrar los usaurios mayores a 30 añoS######################
+create view mayores_a_30 as
+select * from usuarios as us where us.edad > 30;
+
+alter view mayores_a_30 as
+select us.nombres,
+       us.apellidos,
+       us.edad,
+       us.email
+from usuarios AS  us
+where us.edad > 30;
+
+#modificar la vista anterior
+#para que mueste el siguiente campo
+#FULLNAME = nombre y apellido
+#EDAD_USUARIO = la edad del usuario
+#EMAIL_USUARIO = email del usuario
+
+alter view mayores_a_30 as
+select concat(us.nombres,'',us.apellidos) as FULLNAME,
+       US.edad as EDAD_USUARIO,
+       us.email as EMAIL_USUARIO
+from usuarios AS  us
+where us.edad > 30;
+
+# Ala vasita creada mostrar aquellos usuario que su apellido tenga
+#el numero 3
+
+select us.FULLNAME from mayores_a_30 AS us
+where US.FULLNAME LIKE '%3%';
+
+##############OTRA MANERA################################
+SELECT US.FULLNAME ,
+       US.EDAD_USUARIO,
+       US.EMAIL_USUARIO
+FROM mayores_a_30 AS US
+WHERE US.FULLNAME LIKE '%3%';
+
+##################ELIMINAR VIEW##########
+DROP VIEW mayores_a_30
