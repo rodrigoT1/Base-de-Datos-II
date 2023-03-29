@@ -1,0 +1,28 @@
+create database arquitecto;
+use arquitecto;
+drop database arquitecto
+
+create table Arquitecto
+(
+    nombre    varchar(10) not null,
+    apellido  varchar(10) not null,
+    edad      varchar(50) not null,
+    gestion   varchar(20) not null,
+    dia_libre varchar(10) not null
+);
+INSERT INTO Arquitecto (nombre, apellido, edad, gestion, dia_libre)
+VALUES('Juan', 'Pérez', 35, 'Construcción', 'Lunes');
+INSERT INTO Arquitecto (nombre, apellido, edad, gestion, dia_libre)
+VALUES('robert', 'mario', 35, 'diseñador', 'martes');
+INSERT INTO Arquitecto (nombre, apellido, edad, gestion, dia_libre)
+VALUES('tony', 'stark', 35, 'ingeniero', 'Lunes');
+INSERT INTO Arquitecto (nombre, apellido, edad, gestion, dia_libre)
+VALUES('bruce', 'banner', 35, 'Construcción', 'viernes');
+
+
+CREATE VIEW ARQUITECTURA_DIA_LIBRE AS
+SELECT CONCAT(nombre, ' ', apellido) AS fullname, edad, gestion, dia_libre
+FROM Arquitecto
+WHERE dia_libre = 'Lunes';
+
+SELECT * FROM ARQUITECTURA_DIA_LIBRE;

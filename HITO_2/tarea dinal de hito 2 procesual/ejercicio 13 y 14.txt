@@ -1,0 +1,80 @@
+CREATE DATABASE tareaHito2;
+USE tareaHito2;
+
+CREATE TABLE  estudiantes (
+    id_est INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    nombres VARCHAR (50) NOT NULL ,
+    apellidos VARCHAR (50) NOT NULL,
+    edad INTEGER NOT NULL,
+    fono INTEGER NOT NULL ,
+    email VARCHAR (100) NOT NULL ,
+    direccion VARCHAR (100) NOT NULL ,
+    sexo VARCHAR (20)
+);
+
+INSERT INTO estudiantes (nombres, apellidos, edad, fono, email,direccion, sexo)
+VALUES  ('Miguel', 'Gonzales Veliz', 20, 2832115,'miguel@gmail.com', 'Av. 6 de Agosto', 'masculino'),
+        ('Sandra', 'Mavir Uria', 25, 2832116, 'sandra@gmail.com','Av. 6 de Agosto', 'femenino'),
+        ('Joel', 'Adubiri Mondar', 30, 2832117, 'joel@gmail.com','Av. 6 de Agosto', 'masculino'),
+        ('Andrea', 'Arias Ballesteros', 21, 2832118,'andrea@gmail.com', 'Av. 6 de Agosto', 'femenino'),
+        ('Santos', 'Montes Valenzuela', 24, 2832119,'santos@gmail.com', 'Av. 6 de Agosto', 'masculino');
+
+CREATE TABLE materias (
+    id_mat INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    nombre_mat VARCHAR(100) NOT NULL ,
+    cod_mat VARCHAR(100) NOT NULL
+);
+
+-- INGRESANDO DATOS A LA TABLA MATERIAS
+INSERT INTO materias (nombre_mat, cod_mat)
+VALUES ('Introduccion a la Arquitectura', 'ARQ-101'),
+('Urbanismo y Diseno', 'ARQ-102'),
+('Dibujo y Pintura Arquitectonico', 'ARQ-103'),
+('Matematica discreta', 'ARQ-104'),
+('Fisica Basica', 'ARQ-105');
+
+CREATE TABLE inscripcion (
+    id_ins INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    semestre VARCHAR (20) NOT NULL ,
+    gestion INTEGER NOT NULL,
+    id_est INTEGER NOT NULL ,
+    id_mat INTEGER NOT NULL ,
+
+    -- RELACIONANDO LAS TABLAS
+    FOREIGN KEY (id_est) REFERENCES estudiantes (id_est),
+    FOREIGN KEY (id_mat) REFERENCES materias (id_mat)
+);
+
+INSERT INTO inscripcion (id_est, id_mat, semestre, gestion)
+VALUES (1, 1, '1er Semestre', 2018),
+(1, 2, '2do Semestre', 2018),
+(2, 4, '1er Semestre', 2019),
+(2, 3, '2do Semestre', 2019),
+(3, 3, '2do Semestre', 2020),
+(3, 1, '3er Semestre', 2020),
+(4, 4, '4to Semestre', 2021),
+(5, 5, '5to Semestre', 2021);
+
+SELECT est.id_est ,est.nombres , est.apellidos , mat.nombre_mat, mat.cod_mat
+FROM estudiantes AS est
+INNER JOIN materias AS mat on est.id_est = mat.id_mat
+INNER JOIN inscripcion AS ins on mat.id_mat = ins.id_ins
+WHERE mat.cod_mat = 'ARQ-105';
+
+CREATE OR REPLACE FUNCTION comparaMateria(cod_mat VARCHAR(100), edad INTEGER)
+RETURNS VARCHAR (100)
+BEGIN
+    DECLARE result VARCHAR(100);
+    SELECT CONCAT(est.id_est,' ', est.nombres,' ', est.apellidos,' ', est.edad,' ', mat.nombre_mat,' ', mat.cod_mat)
+    INTO result
+    FROM estudiantes AS est
+    INNER JOIN materias AS mat ON est.id_est = mat.id_mat
+    WHERE mat.cod_mat = cod_mat and est.edad = edad;
+    IF result IS NULL THEN
+        SET result = 'No se encontraron ningun registro';
+    END IF;
+    RETURN result;
+END;
+
+
+SELECT com

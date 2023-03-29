@@ -1,0 +1,11 @@
+create database funcion;
+use funcion;
+
+CREATE FUNCTION concatenar_tres_cadenas(cadena1 VARCHAR(255), cadena2 VARCHAR(255), cadena3 VARCHAR(255))
+RETURNS VARCHAR(765)
+BEGIN
+  DECLARE resultado VARCHAR(765);
+  SET resultado = CONCAT(cadena1, ' ', cadena2, ' ', cadena3);
+  RETURN resultado;
+END;
+select concatenar_tres_cadenas('Pepito', 'Pep', '50');

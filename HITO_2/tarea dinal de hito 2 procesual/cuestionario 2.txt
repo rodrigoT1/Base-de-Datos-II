@@ -1,0 +1,16 @@
+6. ¿Cual es la diferencia entre las funciones de agresión y funciones creados por el DBA? Es decir funciones creadas por el usuario.
+R: es que las funciones de agregación son funciones predefinidas que se utilizan para realizar cálculos en grupos de datos, mientras que las funciones creadas por el usuario son funciones personalizadas que son creadas por el DBA o el usuario para realizar cálculos específicos en los datos.
+
+7. ¿Para qué sirve el comando USE?
+R: El comando USE es un comando utilizado en lenguaje SQL que se utiliza para seleccionar una base de datos específica con la que se va a trabajar.
+
+8. Que es DML y DDL? 
+R: DML (Data Manipulation Language): se refiere a los comandos utilizados para manipular los datos almacenados en una base de datos. Estos comandos incluyen SELECT, INSERT, UPDATE y DELETE.
+
+DDL (Data Definition Language): se refiere a los comandos utilizados para definir la estructura de la base de datos. Estos comandos incluyen CREATE, ALTER y DROP.
+
+9. ¿Qué cosas características debe de tener una función? Explique sobre el nombre, el return, parámetros, etc.
+R: En resumen, una función debe tener un nombre claro y descriptivo, parámetros de entrada opcionales o requeridos, un cuerpo de código que realiza la tarea deseada, un valor de retorno opcional y estar diseñada para ser segura y no tener efectos secundarios en otras partes del programa.
+
+10.¿Cómo crear, modificar y cómo eliminar una función? 
+R:

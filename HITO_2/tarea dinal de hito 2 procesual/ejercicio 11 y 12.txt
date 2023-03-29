@@ -1,0 +1,48 @@
+create database pollos_copa;
+use pollos_copa;
+
+CREATE TABLE cliente (
+  id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(50) NOT NULL,
+  direccion VARCHAR(100) NOT NULL,
+  telefono VARCHAR(20) NOT NULL
+);
+
+INSERT INTO cliente (nombre, direccion, telefono) VALUES
+  ('Juan Perez', 'Av. Siempreviva 123', '1234567890'),
+  ('María González', 'Calle del Sol 456', '0987654321'),
+  ('Pedro Rodriguez', 'Av. de los Pájaros 789', '4567890123');
+
+CREATE TABLE pedido (
+  id_pedido INT PRIMARY KEY AUTO_INCREMENT,
+  id_cliente INT NOT NULL,
+  fecha_pedido DATE NOT NULL,
+  CONSTRAINT fk_pedido_cliente FOREIGN KEY (id_cliente)REFERENCES cliente(id_cliente)
+    ON DELETE CASCADE
+);
+
+INSERT INTO pedido (id_cliente, fecha_pedido) VALUES
+  (1, '2022-03-28'),
+  (2, '2022-03-27'),
+  (3, '2022-03-26');
+
+CREATE TABLE detalle_pedido (
+  id_detalle INT PRIMARY KEY AUTO_INCREMENT,
+  id_pedido INT NOT NULL,
+  cantidad INT NOT NULL,
+  precio_unitario DECIMAL(10,2) NOT NULL,
+  total DECIMAL(10,2) NOT NULL,
+  CONSTRAINT fk_detalle_pedido_pedido FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido)
+    ON DELETE CASCADE
+);
+
+INSERT INTO detalle_pedido (id_pedido, cantidad, precio_unitario, total) VALUES
+  (1, 2, 10.00, 20.00),
+  (1, 1, 5.00, 5.00),
+  (2, 3, 8.00, 24.00),
+  (3, 1, 15.00, 15.00),
+  (3, 2, 12.00, 24.00);
+
+select * from cliente;
+select * from pedido;
+select * from detalle_pedido;

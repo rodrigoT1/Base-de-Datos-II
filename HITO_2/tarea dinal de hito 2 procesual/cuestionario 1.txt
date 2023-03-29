@@ -1,0 +1,25 @@
+Manejo de conceptos:
+
+1. ¿A que se refiere cuando se habla de bases de datos relacionales? 
+R: se refiere a un tipo de sistema de gestión de bases de datosque almacena la información en tablas relacionadas entre sí. En una base de datos relacional, los datos se organizan en una o varias tablas, donde cada tabla representa una entidad o concepto específico, y cada fila en la tabla representa una instancia de esa entidad.
+
+2. ¿A que se refiere cuando se habla de bases de datos no relacionales?
+R: se refiere a un tipo de sistema de gestión de bases de datos que no se basa en el modelo de tablas relacionales utilizado en las bases de datos relacionales.
+
+3. ¿Qué es MySQL y MariaDB?. Explique si existen diferencias o son iguales, etc.
+R: MySQL es desarrollado originalmente por la compañía sueca MySQL AB y es propiedad de Oracle Corporación desde 2010. Es ampliamente utilizado en aplicaciones web y es uno de los sistemas de gestión de bases de datos más populares del mundo.
+
+MariaDB fue creado por el fundador original de MySQL, Michael "Monty" Widenius, en respuesta a la adquisición de MySQL por Oracle. MariaDB es compatible con MySQL en gran medida y ofrece muchas características y funciones similares.
+
+4. ¿Qué son las funciones de agregación? 
+R: son un conjunto de funciones en bases de datos que realizan cálculos en grupos de datos y devuelven un resultado único.
+
+5. ¿Qué llegaría a ser XAMPP, WAMP SERVER o LAMP?
+R: son soluciones de software libre que combinan varios componentes de software, incluyendo un servidor web
+
+-XAMPP: es un paquete de software libre que incluye el servidor web Apache, el lenguaje de programación PHP, la base de datos MySQL y otros componentes como Perl, phpMyAdmin y FileZilla. XAMPP es multiplataforma y está disponible para Windows, Linux y MacOS.
+
+-WAMP Server: es un paquete similar a XAMPP, pero está diseñado específicamente para el sistema operativo Windows. Incluye el servidor web Apache, el lenguaje de programación PHP, la base de datos MySQL y otras herramientas.
+
+-LAMP: es un acrónimo que se refiere a una pila de software que incluye el sistema operativo Linux, el servidor web Apache, el lenguaje de programación PHP y la base de datos MySQL. Es una solución comúnmente utilizada para alojar aplicaciones web y sitios web dinámicos en servidores Linux.
+
